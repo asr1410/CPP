@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 //2. user defined header files written by programmer
-//#include"this.h"// this will produce a erroe if not in the directory
+//#include"this.h"// this will produce a error if not in the directory
 
 int main()
 {
