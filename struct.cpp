@@ -13,7 +13,7 @@ struct employee_of_company
 typedef employee_of_company emp;
 emp naman;
 
-typedef types_of_money money;
+// typedef types_of_money money;
 
 int main()
 {
