@@ -10,9 +10,10 @@ using namespace std;
 //NOT USED FOR STATIC VARIABLE
 inline int multiple(int a, int b)
 {
-    static int c = 0;
-    c++;
-    return a * b + c;
+    // static int c = 0;
+    // c++;
+    // return a * b + c;
+    return a * b;
 }
 
 //Here rate is default parameter if value is not given
