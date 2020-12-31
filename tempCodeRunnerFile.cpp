@@ -1,0 +1,1 @@
+cout << fb[2].getId; //this will throw a error
