@@ -21,8 +21,8 @@ public:
 
     void complexSum(complex o1, complex o2)
     {
-        a = o1.a + o2.a;
-        b = o1.b + o2.b;
+        a = o1.a + o2.a; // here the value of the o1.a means the data of a in complex object o1 simalarly as the value of o2.a
+        b = o1.b + o2.b; // here the value of the o1.b means the data of b in complex object o1 simalarly as the value of o2.b
     }
 
     void printNumber()
@@ -31,6 +31,8 @@ public:
     }
 };
 
+//this is non memeber function of the class so it cannot get private data
+//need a call from main class for the eligiblity for the access of the
 complex sumComplex(complex n1, complex n2)
 {
     complex o3;
