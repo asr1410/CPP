@@ -1,34 +1,23 @@
-// OOPS --> CLASSES AND OBJECT
-// C++ --> INITIALLY CALLED C WITH CLASSES
-// CLASS --> EXTENSION WITH STRUCTURE(IN C)
-// STRUCTURE HAD LIMITATION --> MEMBER ARE PUBLIC
-// --> NO METHOD
-// CLASSES --> STRUCTURE AND MORE
-// CLASSES HAVE METHOD AND PROPERTIES
-// CLASSES --> PRIVATE AND PUBLIC
-// STRUCTURE IN C++ ARE TYPEDEF
-// CAN DECLARE OBJECT ALONG WITH THE CLASS DECLARATION
-/*class Employee{
-        Class defination
-    }harry, rohan , lovish;*/
-// nesting of member function
+//length of a string
+// cout << s.length() << endl;
+// cout << s.size() << endl;
 
 #include <iostream>
 #include <cmath>
+#include <string.h>
 #include <cstdio>
 #include <vector>
 #include <algorithm>
 using namespace std;
-
 class binary
 {
-private: //by default all member are private
-    void chk_bin(void);
+private:
+    void checkBinary(void);
     string s;
 
 public:
     void read(void);
-    void ones_compliment(void);
+    void onesComplement(void);
     void display(void);
 };
 
@@ -38,22 +27,23 @@ void binary ::read(void)
     cin >> s;
 }
 
-void binary ::chk_bin(void)
+void binary ::checkBinary(void)
 {
+    cout << "Checking the number weather it is is binary......" << endl;
     for (int i = 0; i < s.length(); i++)
     {
         if (s.at(i) != '0' && s.at(i) != '1')
         {
-            cout << "Incorrect binary format" << endl;
+            cout << "It is not a bianary number" << endl;
             exit(0);
         }
     }
+    cout << "It is a binary number" << endl;
 }
-
-void binary ::ones_compliment(void)
+void binary ::onesComplement(void)
 {
-    chk_bin(); //function can be used inside another function of public
-    cout << "Display your ones compliment number";
+    checkBinary(); //We can declare it inside another variable function of public class
+    cout << "1's compliment of inserted binary number" << endl;
     for (int i = 0; i < s.length(); i++)
     {
         if (s.at(i) == '0')
@@ -66,23 +56,18 @@ void binary ::ones_compliment(void)
         }
     }
 }
+
 void binary ::display(void)
 {
-    for (int i = 0; i < s.length(); i++)
-    {
-        cout << s.at(i);
-    }
-    cout << endl;
+    cout << s << endl;
 }
 
 int main()
 {
-
     binary b;
     b.read();
-    // b.chk_bin();//its in private function
-    b.ones_compliment();
-    cout << endl;
+    // b.checkBinary(); // It will throw a error as it is the private data of the member of the class
+    b.onesComplement();
     b.display();
 
     return 0;
