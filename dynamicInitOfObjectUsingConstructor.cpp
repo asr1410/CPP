@@ -26,12 +26,13 @@ BankDeposit::BankDeposit(int p, int r, int t)
 {
     principle = p;
     years = t;
-    interestRate = float(r) / 100;
+    float a = int(r) / 100;
+    interestRate = a;
     returnValue = principle;
     cout << "running int" << endl;
     for (int i = 0; i < years; i++)
     {
-        returnValue *= (1 + r);
+        returnValue *= (1 + a);
     }
 };
 
@@ -59,7 +60,8 @@ void BankDeposit::ShowAmount()
 int main()
 {
     BankDeposit a, b, c;
-    int p, t, r;
+    int p, t;
+    float r;
     cout << "Enter the principle amount" << endl;
     cin >> p;
     cout << "Enter the interest rate" << endl;
