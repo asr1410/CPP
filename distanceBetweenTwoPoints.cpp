@@ -79,8 +79,8 @@ public:
 int main()
 {
     coordinate c1, c2;
-    c1.getFirstCoordinate(8, 8);
-    c2.getSecondCoordinate(0, 0);
+    c1.getFirstCoordinate(0, 1);
+    c2.getSecondCoordinate(0, 6);
     calculator d;
     d.distanceCalculator(c1, c2);
     // c1.distanceCalculator();//public function of the coordinate class
