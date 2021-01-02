@@ -26,26 +26,25 @@ BankDeposit::BankDeposit(int p, int r, int t)
 {
     principle = p;
     years = t;
-    float a = int(r) / 100;
-    interestRate = a;
+    interestRate = float(r) / 100;
     returnValue = principle;
     cout << "running int" << endl;
     for (int i = 0; i < years; i++)
     {
-        returnValue *= (1 + a);
+        returnValue *= (1 + interestRate);
     }
 };
 
-BankDeposit::BankDeposit(int p, float r, int t)
+BankDeposit::BankDeposit(int p, float R, int t)
 {
     principle = p;
     years = t;
-    interestRate = r;
+    interestRate = R;
     returnValue = principle;
     cout << "running float" << endl;
     for (int i = 0; i < years; i++)
     {
-        returnValue *= (1 + r);
+        returnValue *= (1 + interestRate);
     }
 };
 
@@ -59,17 +58,39 @@ void BankDeposit::ShowAmount()
 
 int main()
 {
-    BankDeposit a, b, c;
-    int p, t;
-    float r;
-    cout << "Enter the principle amount" << endl;
-    cin >> p;
-    cout << "Enter the interest rate" << endl;
-    cin >> r;
-    cout << "Enter the years" << endl;
-    cin >> t;
-    a = BankDeposit(p, r, t);
-    a.ShowAmount();
+    BankDeposit c1;
+    int check, p, r, t;
+    float R;
+    cout << "choose the option given below" << endl;
+    cout << "1. For rate of interest in percentager" << endl;
+    cout << "2. for rate in decimal value" << endl;
+    cin >> check;
+    if (check == 1)
+    {
+        cout << "Enter the amount to invest --> ";
+        cin >> p;
+        cout << "Enter the interest in percentage --> ";
+        cin >> r;
+        cout << "Enter the time for your investment --> ";
+        cin >> t;
+        c1 = BankDeposit(p, r, t);
+        c1.ShowAmount();
+    }
+    else if (check == 2)
+    {
+        cout << "Enter the amount to invest --> ";
+        cin >> p;
+        cout << "Enter the interest in percentage --> ";
+        cin >> R;
+        cout << "Enter the time for your investment --> ";
+        cin >> t;
+        c1 = BankDeposit(p, R, t);
+        c1.ShowAmount();
+    }
+    else
+    {
+        exit(0);
+    }
 
     return 0;
 }
