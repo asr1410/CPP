@@ -1,4 +1,10 @@
-
+/*
+this is the program on how to merge two classes in a single class--> USING MULTIPLE INHERITENCE
+1. Class 1 = Simple Calculator
+2. Class 2 = Scientific Calculator
+3. class 3 = Result
+4. result-->Scientific Calculator + Simple Calculator
+*/
 #include <iostream>
 #include <bits/stdc++.h>
 #include <cmath>
@@ -111,8 +117,8 @@ int main()
     char operation;
     Result r;
     cout << "-----USE ME FOR FASTER CALCULATION-----" << endl;
-    cout << "Press 1 for using simple calculator" << endl;
-    cout << "Press 2 for using scientific calculator" << endl;
+    cout << "**Press 1 for using simple calculator**" << endl;
+    cout << "**Press 2 for using scientific calculator**" << endl;
     cin >> a;
     if (a == 1)
     {
