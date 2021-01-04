@@ -25,7 +25,7 @@ public:
     }
     static void getCount(void)
     {
-        //count << id;//Throw an error
+        // count << id; //Throw an error
         cout << "the value of cout is " << count << endl;
     }
 };
