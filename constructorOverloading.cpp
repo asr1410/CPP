@@ -41,7 +41,7 @@ int main()
     Complex c2(3);
     c2.printNumber();
 
-    Complex c4();
+    Complex c4;
     c4.printNumber();
     return 0;
 }
