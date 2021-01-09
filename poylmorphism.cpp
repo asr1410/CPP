@@ -41,5 +41,16 @@ int main()
     BaseClass obj1;
     DerivedClass obj_derived;
     base_class_pointer = &obj_derived; //pointing base class pointer to derived class
+
+    base_class_pointer->var_base = 34;
+    base_class_pointer->display();
+    base_class_pointer->var_base = 3400;
+    base_class_pointer->display();
+
+    DerivedClass *derived_class_pointer;
+    derived_class_pointer = &obj_derived;
+    derived_class_pointer->var_base = 98;
+    derived_class_pointer->display();
+
     return 0;
 }
