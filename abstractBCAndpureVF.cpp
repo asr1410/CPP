@@ -89,7 +89,7 @@ int main()
     form[1]->display();
 
     //for base class
-    // form[2]->display();//this will throw error
+    // form[2]->display(); //the pointer is no where allocating
 
     return 0;
 }
