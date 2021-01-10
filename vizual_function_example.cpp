@@ -24,23 +24,6 @@ public:
     }
 };
 
-class ROOTVideo : public ROOT
-{
-private:
-    float videoLength;
-
-public:
-    ROOTVideo(string s, float r, float vl) : ROOT(s, r)
-    {
-        videoLength = vl;
-    }
-    void display()
-    {
-        cout << "the amazing video with title " << title << endl;
-        cout << "Ratings : " << rating << " out of 5 stars " << endl;
-        cout << "Length of the video " << videoLength << " minutes" << endl;
-    }
-};
 class ROOTText : public ROOT
 {
 private:
@@ -58,6 +41,25 @@ public:
         cout << "Size of the text " << textSize << " words" << endl;
     }
 };
+
+class ROOTVideo : public ROOT
+{
+private:
+    float videoLength;
+
+public:
+    ROOTVideo(string s, float r, float vl) : ROOT(s, r)
+    {
+        videoLength = vl;
+    }
+    void display()
+    {
+        cout << "the amazing video with title " << title << endl;
+        cout << "Ratings : " << rating << " out of 5 stars " << endl;
+        cout << "Length of the video " << videoLength << " minutes" << endl;
+    }
+};
+
 int main()
 {
     string s;
@@ -65,11 +67,6 @@ int main()
     int words;
 
     ROOT *tuts[3];
-    ROOT oops(s, rating);
-    tuts[3] = &oops;
-    oops.display();
-    tuts[3]->display();
-
     ROOTText *textPointer;
     ROOTVideo *videoPointer;
 
@@ -84,8 +81,14 @@ int main()
     tuts[0] = &oopsvideo; //pointer from the base class
     tuts[0]->display();
 
+    // base class
+    ROOT oops(s, rating);
+    tuts[3] = &oops;
+    oops.display();
+    tuts[3]->display();
+
     // code for text
-    s = "tutorial on object oriented programming";
+    s = "tutorial on object oriented programming is o fht r dsatsab id ";
     rating = 4.22;
     words = 25;
     ROOTText oopstext(s, rating, words);
