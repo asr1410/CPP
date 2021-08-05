@@ -3,44 +3,41 @@ using namespace std;
 
 class Graph
 {
-    int V;
+    int Var;
     list<int> *adj;
 
 public:
-    Graph(int V);
+    Graph(int Var);
     void addEdge(int v, int w);
-    void BFS(int s);
+    void BFS(int Node);
 };
-
-Graph::Graph(int V)
+Graph::Graph(int Var)
 {
-    this->V = V;
-    adj = new list<int>[V];
+    this->Var = Var;
+    adj = new list<int>[Var];
 }
+
 void Graph::addEdge(int v, int w)
 {
     adj[v].push_back(w);
 }
-void Graph::BFS(int s)
+
+void Graph::BFS(int Node)
 {
-    bool *visited = new bool[V];
-    for (int i = 0; i < V; i++)
-    {
-        visited[i] = false;
-    }
+    int arr[Var] = {};
     queue<int> que;
-    visited[s] = true;
-    que.push(s);
+    arr[Node] = 1;
+    que.push(Node);
     while (!que.empty())
     {
-        s = que.front();
-        cout << s << " ";
+        Node = que.front();
+        cout << Node << " ";
         que.pop();
-        for (auto i = adj[s].begin(); i != adj[s].end(); i++)
+        for (auto i = adj[Node].begin(); i != adj[Node].end(); i++)
         {
-            if (!visited[*i])
+            if (!arr[*i])
             {
-                visited[*i] = true;
+                arr[*i] = 1;
                 que.push(*i);
             }
         }
