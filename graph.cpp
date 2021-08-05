@@ -1,60 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-class Graph
-{
-    int Var;
-    list<int> *adj;
-
-public:
-    Graph(int Var);
-    void addEdge(int v, int w);
-    void BFS(int Node);
-};
-Graph::Graph(int Var)
-{
-    this->Var = Var;
-    adj = new list<int>[Var];
-}
-
-void Graph::addEdge(int v, int w)
+void addEdge(vector<int> adj[], int v, int w)
 {
     adj[v].push_back(w);
+    adj[w].push_back(v);
 }
-
-void Graph::BFS(int Node)
+void printGraph(vector<int> adj[], int V)
 {
-    int arr[Var] = {};
-    queue<int> que;
-    arr[Node] = 1;
-    que.push(Node);
-    while (!que.empty())
+    for (int i = 0; i < V; i++)
     {
-        Node = que.front();
-        cout << Node << " ";
-        que.pop();
-        for (auto i = adj[Node].begin(); i != adj[Node].end(); i++)
+        cout << "adjacent list of vertex :- " << i << "\n"
+             << "head";
+        for (auto &&j : adj[i])
         {
-            if (!arr[*i])
-            {
-                arr[*i] = 1;
-                que.push(*i);
-            }
+            cout << " -> " << j;
         }
+        cout << endl;
     }
 }
 int main()
 {
-    Graph g(4);
-    g.addEdge(0, 1);
-    g.addEdge(0, 2);
-    g.addEdge(1, 2);
-    g.addEdge(2, 0);
-    g.addEdge(2, 3);
-    g.addEdge(3, 3);
-
-    cout << "Following is Breadth First Traversal "
-         << "(starting from vertex 2) \n";
-    g.BFS(2);
+    int V = 5;
+    vector<int> adj[V];
+    addEdge(adj, 0, 1);
+    addEdge(adj, 0, 4);
+    addEdge(adj, 1, 2);
+    addEdge(adj, 1, 3);
+    addEdge(adj, 1, 4);
+    addEdge(adj, 2, 3);
+    addEdge(adj, 3, 4);
+    printGraph(adj, V);
     return 0;
 }
