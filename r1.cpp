@@ -1,5 +1,8 @@
-int main(int argc, char const *argv[])
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
 {
-    /* code */
+    int n;
     return 0;
 }
